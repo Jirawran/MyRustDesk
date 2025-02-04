@@ -539,12 +539,24 @@ class MultipleSessions: Reactor.Component {
         var type = getSessionsType();
         return  <div style="size: *">
                 <div .sessions-bar>
+
                     <div style="width:*" .sessions-tab #sessions-type>
-                        <span class={!type ? 'active' : 'inactive'}>{translate('Recent sessions')}</span>
-                        <span #fav class={type == "fav" ? 'active' : 'inactive'}>{translate('Favorites')}</span>
-                        {handler.is_installed() && <span #lan class={type == "lan" ? 'active' : 'inactive'}>{translate('Discovered')}</span>}
-                        <span #ab class={type == "ab" ? 'active' : 'inactive'}>{translate('Address book')}</span>
+                        <span class={!type ? 'active' : 'inactive'}>
+                         <img src="home.png" style="width:16px; height:16px; margin-right:5px;" />
+                        {translate('Recent sessions')}</span>
+                        
+                        <span #fav class={type == "fav" ? 'active' : 'inactive'}>
+                        <img src="home.ico" style="width:16px; height:16px; margin-right:5px;" />
+                        {translate('Favorites')}</span>
+
+                        {handler.is_installed() && <span #lan class={type == "lan" ? 'active' : 'inactive'}>
+                        {translate('Discovered')}</span>}
+
+                        <span #ab class={type == "ab" ? 'active' : 'inactive'}>
+                        <img src="home1.ico" style="width:16px; height:16px; margin-right:5px;" />
+                        {translate('Address book')}</span>
                     </div>
+
                     {!this.hidden && <SearchBar type={type} />}
                     {!this.hidden && <SessionStyle type={type} />}
                 </div>

@@ -1,5 +1,5 @@
 
-Nach dem Start von Dev-Container im Docker-Container wird ein Linux-Binärprogramm im Debug-Modus erstellt.
+Nach dem Start von Dev-Container im Docker-Container wird ein Linux-Binrprogramm im Debug-Modus erstellt.
 
 Derzeit bietet Dev-Container Linux- und Android-Builds sowohl im Debug- als auch im Release-Modus an.
 

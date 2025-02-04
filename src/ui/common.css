@@ -1,7 +1,8 @@
 html {
     var(accent): #0071ff;
     var(button): #2C8CFF;
-    var(gray-bg): #eee;
+    var(gray-bg): #F0FAFFD9;
+    var(w-bq):#ffffff;
     var(bg): white;
     var(border): #ccc;
     var(hover-border): #999;
@@ -24,10 +25,10 @@ html {
 
 html.darktheme {
     var(bg): #252525;
-    var(gray-bg): #141414;
+    var(gray-bg): #000000;
+    var(w-bq):#141414;
     var(menu-hover): #2D3033;
     var(border): #555;
-
     var(text): white;
     var(light-text): #999;
     var(lighter-text): #777;
