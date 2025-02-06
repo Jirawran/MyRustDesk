@@ -559,6 +559,7 @@ class App: Reactor.Component
         app = this;
     }
 
+// แถบซ้ายมือบน your Desktop ,control remote desktop
     function render() {
         var is_can_screen_recording = handler.is_can_screen_recording(false);
         return
@@ -573,17 +574,10 @@ class App: Reactor.Component
                         </div>
                         <PasswordArea />
                     </div>
-                    {!is_win || handler.is_installed() ? "": <InstallMe />}
-                    {software_update_url ? <UpdateMe /> : ""}
-                    {is_win && handler.is_installed() && !software_update_url && handler.is_installed_lower_version() ? <UpgradeMe /> : ""}
-                    {is_can_screen_recording ? "": <CanScreenRecording />}
-                    {is_can_screen_recording && !handler.is_process_trusted(false) ? <TrustMe /> : ""}
-                    {!service_stopped && is_can_screen_recording && handler.is_process_trusted(false) && handler.is_installed() && !handler.is_installed_daemon(false) ? <InstallDaemon /> : ""}
-                    {system_error ? <SystemError /> : ""}
-                    {!system_error && handler.is_login_wayland() && !handler.current_is_wayland() ? <FixWayland /> : ""}
-                    {!system_error && handler.current_is_wayland() ? <ModifyDefaultLogin /> : ""}
+                    
                 </div>
-                <div .right-pane>
+           
+                <div .right-pane> 
                     <div .right-content>
                         <div .card-connect>
                             <div .title>{translate('Control Remote Desktop')}</div>
@@ -1057,6 +1051,7 @@ function updatePasswordArea() {
 }
 updatePasswordArea();
 
+//ช่องใส่id
 class ID: Reactor.Component {
     function render() {
         return <input type="text" #remote_id .outline-focus novalue={translate("Enter Remote ID")}
@@ -1232,7 +1227,8 @@ function set_local_user_info(user) {
     }
     handler.set_local_option("user_info", JSON.stringify(user_info));
 }
-
+ 
+ // การ์ดเข้าสู่ระบบของ addressbook
 function login() {
     var name0 = getUserName();
     var pass0 = '';

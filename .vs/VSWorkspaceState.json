@@ -1,13 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\flutter",
-    "\\flutter\\assets",
-    "\\res",
-    "\\res\\.devcontainer",
+    "\\examples",
+    "\\flatpak",
+    "\\flutter\\lib",
+    "\\flutter\\lib\\desktop",
+    "\\flutter\\lib\\desktop\\widgets",
+    "\\res\\vcpkg",
     "\\src",
-    "\\src\\ui",
-    "\\src\\ui\\img"
+    "\\src\\lang",
+    "\\src\\platform"
   ],
+  "SelectedNode": "\\src\\ui\\cm.tis",
   "PreviewInSolutionExplorer": false
 }
