@@ -3,14 +3,10 @@
     "",
     "\\examples",
     "\\flatpak",
-    "\\flutter\\lib",
-    "\\flutter\\lib\\desktop",
-    "\\flutter\\lib\\desktop\\widgets",
-    "\\res\\vcpkg",
+    "\\res",
     "\\src",
-    "\\src\\lang",
-    "\\src\\platform"
+    "\\src\\ui"
   ],
-  "SelectedNode": "\\src\\ui\\cm.tis",
+  "SelectedNode": "\\src\\ui\\index.css",
   "PreviewInSolutionExplorer": false
 }

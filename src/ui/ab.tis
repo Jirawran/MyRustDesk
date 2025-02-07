@@ -13,11 +13,11 @@ class AddressBook: Reactor.Component
         if (tags) return tags.split(",");
         return [];
     }();
-    
+//// ส่วนของ ด้านในเมนู address  book   
     function render() {
-        if (!handler.get_local_option("access_token")) {
-            return <div style="margin: *"><div #login-link .link style="margin: *; width: 100px; text-align: center; font-size: 1.2em;">{translate("Login")}</div></div>;
-        }
+        if (false) {
+        return <div style="margin: *"><div #login-link .link style="margin: *; width: 100px; text-align: center; font-size: 1.2em;">{translate("Login")}</div></div>;
+    }
         if (abLoading) {
             return <div style="margin: *"><progress style="color: #0071ff" /></div>;
         } else if (abError) {
@@ -38,6 +38,7 @@ class AddressBook: Reactor.Component
                     <li #remove-tag>{translate('Remove')}</li>
                 </menu>
             </popup>
+
             <div .left-pane>
                 <div style="padding: 0; padding-bottom: 1em" #tags-label>{translate('Tags')}{svg_menu}</div>
                 <div #tags>
@@ -46,8 +47,9 @@ class AddressBook: Reactor.Component
                     })}
                 </div>
             </div>
+
             <div .right-pane>
-                <div .right-content style="padding-top:0; padding-right: 0;">
+                <div .right-content style="padding-top:0; padding-right: 0; ">
                     <SessionList sessions={peers} type="ab" />
                 </div>
             </div>
@@ -322,7 +324,7 @@ class SessionList: Reactor.Component {
         var me = this;
         sessions = sessions.map(function(x) { return me.getSession(x); });
         return <div .recent-sessions-content key={sessions.length}>
-            <popup>
+            <popup #manu-context>
                 <menu.context #remote-context>
                     <li #connect>{translate('Connect')}</li>
                     <li #transfer>{translate('Transfer file')}</li>
@@ -549,8 +551,10 @@ class MultipleSessions: Reactor.Component {
                         <img src="Favorites.png" style="width:24px; height:24px; margin-right:10px;" />
                         {translate('Favorites')}</span>
 
-                        {handler.is_installed() && <span #lan class={type == "lan" ? 'active' : 'inactive'}>
-                        {translate('Discovered')}</span>}
+
+                        <span #lan class={type == "lan" ? 'active' : 'inactive'}>
+                        <img  src="discovered.png"  style="widt:24px;  height:24px; margin-right:10px;" />
+                        {translate('Discovered')}</span>
 
                         <span #ab class={type == "ab" ? 'active' : 'inactive'}>
                         <img src="address book.png" style="width:24px; height:24px; margin-right:10px;" />
@@ -562,7 +566,7 @@ class MultipleSessions: Reactor.Component {
                 </div>
                 {!this.hidden && 
                 ((type == "fav" && <Favorites />) ||
-                (type == "lan" && handler.is_installed() && <LanPeers />) ||
+                (type == "lan" && <LanPeers />) ||
                 (type == "ab" && <AddressBook />) ||
                 <SessionList sessions={handler.get_recent_sessions()} />)}
             </div>;
