@@ -28,7 +28,7 @@ body {
 }
 
 .left-pane {
-    width: 250px;
+    width: 200px;
     height: *;
     background: var(w-bq);
     border-right: 0px solid #007bff;
@@ -223,6 +223,7 @@ span.connect-status0 {
 div.recent-sessions-content {
     border-spacing: 1em;
     flow: horizontal-flow;
+    border-radius:20px;
 }
 
 div.remote-session {
@@ -458,7 +459,7 @@ menu.context#ab-context {
 .custom-popup {
     position: absolute;
     background: white;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
@@ -478,3 +479,70 @@ menu.context#ab-context {
             .custom-popup menu.context li:hover {
                 background-color: #f0f0f0;
             }
+.custom-popup {
+    background: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*popup tags book*/
+    #manu-context {
+        position: absolute;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        z-index: 1000;
+    }
+/*ส่วน popup*/
+menu.context {
+    background: color(bg);
+    border: 0px solid #ccc;
+    border-radius: 1em;
+    padding: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: *;
+    z-index: 1000;
+    color: color(lighter-text);
+}
+
+    menu.context li {
+        gap:10px;
+        border-radius: 1em;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+        menu.context li:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+menu #enhancements-menu {
+    background: color(bg);
+    border: 0px solid #ccc;
+    border-radius: 1em;
+    padding: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: *;
+    z-index: 1000;
+    color: color(lighter-text);
+}
+menu #audio-input {
+    background: color(bg);
+    border: 0px solid #ccc;
+    border-radius: 1em;
+    padding: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: *;
+    z-index: 1000;
+    color: color(lighter-text);
+}
+menu #languages {
+    background: color(bg);
+    border: 0px solid #ccc;
+    border-radius: 1em;
+    padding: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: *;
+    z-index: 1000;
+    color: color(lighter-text);
+}

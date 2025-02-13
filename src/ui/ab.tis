@@ -83,7 +83,7 @@ class AddressBook: Reactor.Component
             translate("Add ID"),
             <div .form>
             <div>{translate("whitelist_sep")}</div> 
-            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em;"></textarea>
+            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em; border-radius: 5px;"></textarea>
             </div>,
             "",
             function(res=null) {
@@ -112,7 +112,7 @@ class AddressBook: Reactor.Component
         var me = this;
         msgbox("custom-add-tag", translate("Add Tag"), <div .form>
             <div>{translate("whitelist_sep")}</div> 
-            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em;"></textarea>
+            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em; border-radius: 5px;"></textarea>
             </div>, "", function(res=null) {
             if (!res) return;
             var value = (res.text || "").trim();

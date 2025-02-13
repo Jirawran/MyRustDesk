@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\examples",
-    "\\flatpak",
-    "\\res",
     "\\src",
     "\\src\\ui"
   ],
-  "SelectedNode": "\\src\\ui\\index.css",
+  "SelectedNode": "\\src\\ui\\common.tis",
   "PreviewInSolutionExplorer": false
 }

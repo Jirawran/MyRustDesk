@@ -86,7 +86,7 @@ input[type=text], input[type=password], input[type=number] {
     width: *;
     font-size: 1.5em;
     border-color: color(border);
-    border-radius: 0;
+    border-radius: 7px;
     color: color(text);
     padding-left: 0.5em;
     background: color(bg);
@@ -97,7 +97,8 @@ input:empty {
 }
 
 input.outline-focus:focus {
-    outline: color(button) solid 3px;
+    outline: color(button) solid 1px;
+    border-radius:5px;
 }
 
 textarea {
@@ -154,11 +155,11 @@ svg {
 }
 
 header {
-  border-bottom: color(border) solid 1px;
-  height: 22px;
-  flow: horizontal;
-  overflow-x: hidden;
-  position: relative;
+    border-bottom: color(border) solid 1px;
+    height: 22px;
+    flow: horizontal;
+    overflow-x: hidden;
+    position: relative;
 }
 
 @media platform == "OSX" {
@@ -393,6 +394,7 @@ menu li.line-through, menu li.line-through :hover {
     background: color(button);
     border-color: color(button);
     color: white;
+
 }
 
 #tags span:hover {
