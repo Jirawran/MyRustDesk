@@ -14,11 +14,13 @@ var software_update_url = "";
 var key_confirmed = tmp[1];
 var system_error = "";
 
+
 var svg_menu = <svg #menu viewBox="0 0 512 512">
 	<circle cx="256" cy="256" r="64"/>
 	<circle cx="256" cy="448" r="64"/>
 	<circle cx="256" cy="64" r="64"/>
 </svg>;
+
 var svg_refresh_password = <svg #refresh-password xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0 .57-8.38"/></svg>;
 
 var my_id = handler.get_id();
@@ -303,7 +305,7 @@ class MyIdMenu: Reactor.Component {
     function render() {
         return <div #myid>
             {this.renderPop()}
-            ID{svg_menu}
+            {svg_menu}
         </div>;
     }
 
@@ -560,40 +562,47 @@ class App: Reactor.Component
     }
 
 // á¶º«éÒÂÁ×Íº¹ your Desktop ,control remote desktop
-    function render() {
+   function render() {
         var is_can_screen_recording = handler.is_can_screen_recording(false);
         return
             <div .app>
-                    <div .left-pane>
-                    <div>
-                        <div .title>{translate('Your Desktop')}</div>
-                        <div .lighter-text>{translate('desk_tip')}</div>
-                        <div .your-desktop>
-                            <MyIdMenu />
+                <div .left-pane1>
+                <MyIdMenu />
+                </div>
+
+                <div .right-pane> 
+                    <div .right-content>
+                    <div .title>{translate('Your Desktop')}</div>
+                    <div .lighter-text>{translate('desk_tip')}</div>
+
+                    <div .card-connect>
+                        <div .your-desktop> 
+                            <div .title1>ID</div>
                             {key_confirmed ? <input type="text" readonly value={formatId(get_id())}/> : translate("Generating ...")}
                         </div>
                         <PasswordArea />
                     </div>
-                    
-                </div>
-           
-                <div .right-pane> 
-                    <div .right-content>
+                        
                         <div .card-connect>
-                            <div .title>{translate('Control Remote Desktop')}</div>
+                            <div .title1>{translate('Control Remote Desktop')} </div> 
                             <div .id.box>
-                            <ID @{this.remote_id} /></div>
+                            <ID @{this.remote_id} />
+                        </div>
+
                             <div .right-buttons>
                                 <button .button .outline #file-transfer>{translate('Transfer file')}</button>
                                 <button .button #connect>{translate('Connect')}</button>
                             </div>
-                        </div>                     
-                        <MultipleSessions @{this.multipleSessions} />
+                         </div>                   
                     </div>
                     <ConnectStatus @{this.connect_status} />
                 </div>
-                <div #overlay style="position: absolute;size:*;background:black;opacity:0.5;display:none" />
-            </div>;
+                
+                <div .center-page>
+            <MultipleSessions @{this.multipleSessions} />
+            <div #overlay style="position: absolute;size:*;background:black;opacity:0.5;display:none" />
+            </div>
+            </div> 
     }
 
     event click $(button#connect) {
@@ -1056,7 +1065,7 @@ updatePasswordArea();
 class ID: Reactor.Component {
     function render() {
         return <input type="text" #remote_id .outline-focus novalue={translate("Enter Remote ID")}
-        value={formatId(handler.get_remote_id())} />;
+        value={formatId(handler.get_remote_id())} style="font-size: 18px; padding: 10px; border: none; border-bottom: 1px solid #f1642e; border-radius: 0; background-color: none; outline: none;" />;
     }
 
     // https://github.com/c-smile/sciter-sdk/blob/master/doc/content/sciter/Event.htm

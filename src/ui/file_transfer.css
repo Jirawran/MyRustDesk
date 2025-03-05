@@ -7,7 +7,7 @@ div#file-transfer {
     size: *;
     margin: 0;
     flow: horizontal;
-    background: color(gray-bg);
+    background: color(white-bg);
     padding: 0.5em;
 }
 
@@ -38,7 +38,7 @@ table > tbody {
 }
 
 table th {
-  background-color: color(gray-bg);
+  background-color: color(white-bg);
 }
 
 table th

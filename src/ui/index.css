@@ -14,12 +14,13 @@ body {
 
 .title {
     font-size: 20px;
-    color:blue;
+    color: color(lighting-text);
 }
 
 .app {
     flow: horizontal;
     size: *;
+    justify-content: center;
 }
 
 .lighter-text {
@@ -28,13 +29,27 @@ body {
 }
 
 .left-pane {
-    width: 200px;
+    width: *;
     height: *;
     background: var(w-bq);
     border-right: 0px solid #007bff;
     padding:15px 0px  0px 0px;
 }
 
+.left-pane1 {
+    size: 3px;
+    height: 25px;
+    margin: 10px;
+    background: var(orange-bg);
+    border-radius: 50px;
+    padding: 20px 7px 7px 7px;
+}
+.left-pane1  svg:hover{
+    fill:var(leftsvg);
+}
+.left-pane1 svg {
+    fill: white;
+}
 #ab .left-pane {
     border-radius: 1em;
     padding: 1em;
@@ -42,6 +57,7 @@ body {
 
 #ab .right-pane {
     background: none;
+    padding: 20px;
 }
 
 #ab .right-content {
@@ -65,11 +81,11 @@ div.sessions-bar {
     flow: horizontal;
 }
 
-/// á¤èÊèÇ¹á¶ºàÁ¹Ù 
+/// á¤èÊèÇ¹á¶ºàÁ¹Ù
 
 div.sessions-tab span {
     display: inline-block;
-    padding: 6px 8px;
+    padding: 6px;
     cursor: pointer;
     border-radius:30px;
     @ELLIPSIS;
@@ -79,12 +95,12 @@ div.sessions-tab svg {
     size: 14px;
 }
 
-
 div.sessions-tab span.active {
     cursor: default;
-    border-radius: 5px;
-    background: color(bg);
+    border-radius: 0px;
+    background: none;
     color: color(text);
+    border-bottom: 1.5px solid black;
 }
 
 div.search-id {
@@ -125,6 +141,7 @@ span.clear-input {
 
 div.search-id:hover span.clear-input {
     display: inline-block;
+
 }
 
 span.clear-input:hover {
@@ -133,7 +150,7 @@ span.clear-input:hover {
 
 .your-desktop {
     border-spacing: 0.5em;
-    border-left: color(accent) solid 1px;
+    border-left: #f1642e solid 1px;
     padding-left: 0.5em;
 }
 
@@ -178,7 +195,7 @@ span.clear-input:hover {
 
 .card-connect {
     @CARD;
-    width: 300px;
+    width:300px;
 }
 
 .right-buttons {
@@ -186,7 +203,7 @@ span.clear-input:hover {
 }
 
 .right-buttons>button {
-    margin-left: 1.6em;
+    margin-left: 1em;
 }
 
 div.connect-status {
@@ -236,7 +253,7 @@ div.remote-session {
 }
 
 div.remote-session:hover, div.remote-session-list:hover {
-    outline: color(button) solid 2px -2px;
+    outline: color(button) solid 1px
 }
 
 div.remote-session .platform {
@@ -387,7 +404,7 @@ div#myid, div#tags-label {
 
 div#myid svg#menu, div#tags-label svg#menu {
     position: absolute;
-    right: -1em;
+    right: -1.3em;
 }
 
 div#tags-label svg#menu:hover {
@@ -546,3 +563,16 @@ menu #languages {
     z-index: 1000;
     color: color(lighter-text);
 }
+.center-page {
+    size: *;
+    margin: 10px;
+    background: color(gray-bg);
+    border-radius: 1em;
+    padding:10px;
+}
+
+@media platform == "OSX" {
+    .center-page {
+        background: color(gray-bg-osx);
+    }
+

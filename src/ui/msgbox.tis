@@ -153,8 +153,8 @@ class MsgboxComponent: Reactor.Component {
         self.timer(3ms, msgboxTimerFunc);
         return (<div><div style="position: absolute; size:*; background:black; opacity:0.5;" />
         <div style="size: *; position: absolute;">
-            <div style={"border: " + color + " solid 1px; background: color(bg); margin: *; width:" + (this.width) + "px; min-height:" + (this.height) + "px"}>
-            <div .caption style={"background: " + color}>
+            <div style={"border: " + color + " solid 0px; background: color(bg); border-radius:15px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); margin: *; width:" + (this.width) + "px; min-height:" + (this.height) + "px"}>
+            <div .caption style="background:color(bg);">
                 {translate(this.title)}
             </div>
             <div style="padding: 1em 2em; size: *;">

@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\flutter",
+    "\\flutter\\lib",
+    "\\flutter\\lib\\desktop",
+    "\\flutter\\lib\\desktop\\pages",
+    "\\flutter\\lib\\desktop\\widgets",
+    "\\flutter\\windows",
     "\\src",
     "\\src\\ui"
   ],
-  "SelectedNode": "\\src\\ui\\common.tis",
+  "SelectedNode": "\\src\\lang.rs",
   "PreviewInSolutionExplorer": false
 }

@@ -40,6 +40,7 @@ class AddressBook: Reactor.Component
             </popup>
 
             <div .left-pane>
+                <img src="tagsbook.png" style="width:24px; height:24px; margin-right:10px;"/>
                 <div style="padding: 0; padding-bottom: 1em" #tags-label>{translate('Tags')}{svg_menu}</div>
                 <div #tags>
                     {ab.tags.map(function(t) {
@@ -83,7 +84,7 @@ class AddressBook: Reactor.Component
             translate("Add ID"),
             <div .form>
             <div>{translate("whitelist_sep")}</div> 
-            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em; border-radius: 5px;"></textarea>
+            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em; border-radius: 5px; border-color:#b3e6ff;"></textarea>
             </div>,
             "",
             function(res=null) {
@@ -112,7 +113,7 @@ class AddressBook: Reactor.Component
         var me = this;
         msgbox("custom-add-tag", translate("Add Tag"), <div .form>
             <div>{translate("whitelist_sep")}</div> 
-            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em; border-radius: 5px;"></textarea>
+            <textarea .outline-focus spellcheck="false" name="text" style="overflow: scroll-indicator; width:*; height: 160px; font-size: 1.2em; padding: 0.5em; border-radius: 5px; border-color:#b3e6ff;"></textarea>
             </div>, "", function(res=null) {
             if (!res) return;
             var value = (res.text || "").trim();
@@ -514,7 +515,7 @@ class SessionList: Reactor.Component {
                 }
             }
             if (!peer) return;
-            msgbox("custom-edit-tag", "Edit Tag", <SelectTags tags={peer.tags || []} />, "", function(res=null) {
+              msgbox("custom-edit-tag", "Edit Tag", <SelectTags tags={peer.tags || []} />, "", function(res=null) {
                     if (!res) return;
                     peer.tags = selectTags.tags;
                     updateAb();
@@ -541,26 +542,24 @@ class MultipleSessions: Reactor.Component {
         var type = getSessionsType();
         return  <div style="size: *">
                 <div .sessions-bar>
-
-                    <div style="width:*" .sessions-tab #sessions-type>
-                        <span class={!type ? 'active' : 'inactive'}>
-                         <img src="sesions.png" style="width:24px; height:24px; margin-right:10px;" />
-                        {translate('Recent sessions')}</span>
+                    <div style="width:*" .sessions-tab #sessions-type >
+                        <span class={!type ? 'active session-item' : 'inactive'}>
+                        <img src="sesions.png" style="width:24px; height:24px; margin-right:5px;" />
+                        </span>
                         
                         <span #fav class={type == "fav" ? 'active' : 'inactive'}>
-                        <img src="Favorites.png" style="width:24px; height:24px; margin-right:10px;" />
-                        {translate('Favorites')}</span>
+                        <img src="Favorites.png" style="width:24px; height:24px; margin-right:5px;" />
+                        </span>
 
 
                         <span #lan class={type == "lan" ? 'active' : 'inactive'}>
-                        <img  src="discovered.png"  style="widt:24px;  height:24px; margin-right:10px;" />
-                        {translate('Discovered')}</span>
+                        <img  src="discovered.png"  style="widt:24px;  height:24px; margin-right:5px;" />
+                        </span>
 
                         <span #ab class={type == "ab" ? 'active' : 'inactive'}>
-                        <img src="address book.png" style="width:24px; height:24px; margin-right:10px;" />
-                        {translate('Address book')}</span>
+                        <img src="address book.png" style="width:24px; height:24px; margin-right:5px;" />
+                        </span>
                     </div>
-
                     {!this.hidden && <SearchBar type={type} />}
                     {!this.hidden && <SessionStyle type={type} />}
                 </div>
