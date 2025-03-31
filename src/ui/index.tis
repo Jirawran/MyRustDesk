@@ -1,4 +1,4 @@
-if (is_osx) view.windowBlurbehind = #light;
+๏ปฟif (is_osx) view.windowBlurbehind = #light;
 stdout.println("current platform:", OS);
 stdout.println("is_xfce: ", is_xfce);
 
@@ -14,7 +14,39 @@ var software_update_url = "";
 var key_confirmed = tmp[1];
 var system_error = "";
 
+var svg_sun = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+  <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+</svg>
 
+var svg_moon = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+  <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+</svg>
+
+var svg_langs = <svg #langs xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+  <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
+  <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
+</svg>
+
+var svg_menuone = <svg #menuone xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-gear-fill" viewBox="0 0 16 16">
+  <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+</svg>
+
+var svg_connect =  <svg
+                    class="flex-shrink-0 size-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z"
+                    ></path>
+                  </svg>
+
+var svg_file = <svg #Transfer file xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-symlink-fill" viewBox="0 0 16 16">
+  <path d="M13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2l.04.87a2 2 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3M2.19 3q-.362.002-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.586 3zm9.608 5.271-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742"/>
+</svg>
 var svg_menu = <svg #menu viewBox="0 0 512 512">
 	<circle cx="256" cy="256" r="64"/>
 	<circle cx="256" cy="448" r="64"/>
@@ -54,11 +86,7 @@ class ConnectStatus: Reactor.Component {
     event click $(#start-service) () {
         handler.set_option("stop-service", "");
     }
-
-    event click $(#setup-server) () {
-        handler.open_url("https://rustdesk.com/blog/id-relay-set/");
     }
-}
 
 function createNewConnect(id, type) {
     id = id.replace(/\s/g, "");
@@ -305,7 +333,7 @@ class MyIdMenu: Reactor.Component {
     function render() {
         return <div #myid>
             {this.renderPop()}
-            {svg_menu}
+            {svg_menuone}
         </div>;
     }
 
@@ -345,7 +373,7 @@ class MyIdMenu: Reactor.Component {
         </popup>;
     }
 
-    event click $(svg#menu) (_, me) {
+    event click $(svg#menuone) (_, me) {
         this.showSettingMenu();
     }
 
@@ -354,7 +382,7 @@ class MyIdMenu: Reactor.Component {
         this.toggleMenuState();
         if (direct_server) direct_server.update();
         var menu = this.$(menu#config-options);
-        this.$(svg#menu).popup(menu);
+        this.$(svg#menuone).popup(menu);
     }
 
     event click $(li#login) () {
@@ -555,54 +583,87 @@ function editDirectAccessPort() {
       });
 }
 
+class Theme: Reactor.Component {
+    function render() {
+        var isDark = handler.get_option("allow-darktheme") == "Y";
+        return <button.theme #theme onclick={this.toggleTheme}
+            class={"theme-toggle " + (isDark ? "dark-mode" : "light-mode")}>
+            {isDark ? svg_moon : svg_sun}
+        </button>;
+}
+    event click $(#theme) (_, me) {
+        me.toggleTheme();
+    }
+
+    function toggleTheme() {
+        var isDark = handler.get_option("allow-darktheme") == "Y";
+        var newTheme = isDark ? "N" : "Y";
+
+        handler.set_option("allow-darktheme", newTheme);
+        this.updateTheme();
+        app.update();
+    }
+    
+    function updateTheme() {
+        var root_element = self;
+        var enableDark = handler.get_option("allow-darktheme") == "Y";
+
+        if (enableDark) {
+            root_element.attributes["class"] = "darktheme";
+        } else {
+            root_element.attributes.remove("class");
+        }
+    }
+}
+
 class App: Reactor.Component
 {
     function this() {
         app = this;
     }
 
-// แถบซ้ายมือบน your Desktop ,control remote desktop
+// your Desktop ,control remote desktop
    function render() {
         var is_can_screen_recording = handler.is_can_screen_recording(false);
-        return
-            <div .app>
-                <div .left-pane1>
-                <MyIdMenu />
-                </div>
-
+       return <div .app>
                 <div .right-pane> 
                     <div .right-content>
+
+                    <div .title>{translate('Control Remote Desktop')}</div> 
+                    <div .id.box>
+                    <ID @{this.remote_id} /> 
+                    <button .button .outline #file-transfer>{svg_file}</button> <button .button #connect>{svg_connect}</button>
+                </div>
+                <div .separator />
                     <div .title>{translate('Your Desktop')}</div>
                     <div .lighter-text>{translate('desk_tip')}</div>
 
-                    <div .card-connect>
+            <div .card-connect>
                         <div .your-desktop> 
                             <div .title1>ID</div>
                             {key_confirmed ? <input type="text" readonly value={formatId(get_id())}/> : translate("Generating ...")}
                         </div>
                         <PasswordArea />
                     </div>
-                        
-                        <div .card-connect>
-                            <div .title1>{translate('Control Remote Desktop')} </div> 
-                            <div .id.box>
-                            <ID @{this.remote_id} />
-                        </div>
 
-                            <div .right-buttons>
-                                <button .button .outline #file-transfer>{translate('Transfer file')}</button>
-                                <button .button #connect>{translate('Connect')}</button>
-                            </div>
-                         </div>                   
-                    </div>
-                    <ConnectStatus @{this.connect_status} />
-                </div>
-                
-                <div .center-page>
+                        
+        </div>
+        <ConnectStatus @{this.connect_status} />
+    </div>
+
+   <div .center-page>
             <MultipleSessions @{this.multipleSessions} />
             <div #overlay style="position: absolute;size:*;background:black;opacity:0.5;display:none" />
             </div>
-            </div> 
+
+    <div .right-pane1>
+                <div .sidebar-header>
+                <MyIdMenu />
+                <Theme />
+            </div>
+        </div>
+</div>;
+
     }
 
     event click $(button#connect) {
@@ -1061,7 +1122,7 @@ function updatePasswordArea() {
 }
 updatePasswordArea();
 
-//ช่องใส่id
+//Enter Remote id
 class ID: Reactor.Component {
     function render() {
         return <input type="text" #remote_id .outline-focus novalue={translate("Enter Remote ID")}
@@ -1238,7 +1299,7 @@ function set_local_user_info(user) {
     handler.set_local_option("user_info", JSON.stringify(user_info));
 }
  
- // การ์ดเข้าสู่ระบบของ addressbook
+ // addressbook
 function login() {
     var name0 = getUserName();
     var pass0 = '';

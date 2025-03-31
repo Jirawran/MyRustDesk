@@ -246,6 +246,7 @@ pub enum Data {
     Control(DataControl),
     Theme(String),
     Language(String),
+    Languagebutton(String),
     Empty,
     Disconnected,
     DataPortableService(DataPortableService),

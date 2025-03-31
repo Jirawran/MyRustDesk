@@ -3,7 +3,8 @@ html {
     var(button): #2C8CFF;
     var(gray-bg): #f5f5f5;
     var(orange-bg): #f1642e;
-    var(w-bq):#ffffff;
+    var(orange-bt): #f1642e;
+    var(w-bq):#ebedef;
     var(bg): white;
     var(border): #ccc;
     var(hover-border): #999;
@@ -24,12 +25,15 @@ html {
     var(blood-red): #F82600;
     var(gray-bg-osx): rgba(238, 238, 238, 0.75);
     var(leftsvg): #f1642e;
+    var(logotheme): #ffffff;
+    var(logosetting): #ffffff;
 }
 
 html.darktheme {
     var(bg): #252525;
     var(gray-bg): #000000;
     var(orange-bg): #000000;
+    var(orange-bt): #f1642e;
     var(w-bq):#141414;
     var(menu-hover): #2D3033;
     var(border): #555;
@@ -40,6 +44,8 @@ html.darktheme {
     var(placeholder): #555;
     var(gray-bg-osx): rgba(37, 37, 37, 0.75);
     var(leftsvg):#ffffff;
+    var(logotheme): #FFB200;
+    var(logosetting): #ffffff;
 }
 
 body {
@@ -47,13 +53,40 @@ body {
     color: color(text);
 }
 
+button.button#connect {
+    width: 15px;
+    height: 40px;
+    border-radius: 50px;
+    background: color(orange-bt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: color(logosetting);
+}
+button.button#connect:active {
+    background: white;
+}
+
+button.outline#file-transfer {
+    border: color(border) solid 1px;
+    background: transparent;
+    color: color(text);
+    cursor: pointer;
+    width: 15px;
+    height: 40px;
+    border-radius: 50px;
+}
+
 button.button {
     height: 2em;
     border-radius: 0.5em;
     background: color(button);
     color: color(bg);
-    border-color: color(button);
-    min-width: 40px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 button[type=checkbox], button[type=checkbox]:active {
@@ -67,6 +100,7 @@ button.outline {
     border: color(border) solid 1px;
     background: transparent;
     color: color(text);
+    cursor: pointer;
 }
 
 button.button:active, button.active {
@@ -316,6 +350,10 @@ header svg, menu svg {
   size: 14px;
 }
 
+header svg, menuone svg {
+    size: 14px;
+} 
+
 header span, menu span {
   padding: 4px 8px;
   margin: * 0.5em;
@@ -483,3 +521,23 @@ div.user-session select {
   color: color(text);
   padding-left: 0.5em;
 }
+
+button.theme {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    background: color(orange-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08),0 8px 16px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    display: center;
+    color: color(logotheme);
+    padding: 10px 12px 10px 10px;
+    margin: 60px 5px 0px 0px;
+
+}
+    button.theme:active {
+        background: white;
+    }
+

@@ -4,7 +4,8 @@
 )]
 
 use librustdesk::*;
-
+use std::fs::OpenOptions;
+use std::io::Write;
 #[cfg(any(target_os = "android", target_os = "ios", feature = "flutter"))]
 fn main() {
     if !common::global_init() {
@@ -23,13 +24,16 @@ fn main() {
 )))]
 fn main() {
     if !common::global_init() {
+        log_to_file("Global initialization failed");
         return;
     }
     #[cfg(all(windows, not(feature = "inline")))]
     unsafe {
         winapi::um::shellscalingapi::SetProcessDpiAwareness(2);
+        log_to_file("SetProcessDpiAwareness(2) called");
     }
     if let Some(args) = crate::core_main::core_main().as_mut() {
+        log_to_file("Starting UI");
         ui::start(args);
     }
     common::global_clean();
@@ -38,10 +42,12 @@ fn main() {
 #[cfg(feature = "cli")]
 fn main() {
     if !common::global_init() {
+        log_to_file("Global initialization failed");
         return;
     }
     use clap::App;
     use hbb_common::log;
+    log_to_file("Start");
     let args = format!(
         "-p, --port-forward=[PORT-FORWARD-OPTIONS] 'Format: remote-id:local-port:remote-port[:remote-host]'
         -c, --connect=[REMOTE_ID] 'test only'
@@ -103,4 +109,15 @@ fn main() {
         crate::start_server(true, false);
     }
     common::global_clean();
+}
+fn log_to_file(message: &str) {
+    let mut file = OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open("app.log")
+        .expect("Failed to open log file");
+
+    if let Err(e) = writeln!(file, "{}", message) {
+        eprintln!("Failed to write to log file: {}", e);
+    }
 }

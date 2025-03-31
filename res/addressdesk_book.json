@@ -1,0 +1,4 @@
+{
+	"peers": [ "peer1", "peer2", "peer3" ],
+	"tags": [ "tag1", "tag2", "tag3" ]
+}

@@ -3,13 +3,9 @@
     "",
     "\\flutter",
     "\\flutter\\lib",
-    "\\flutter\\lib\\desktop",
-    "\\flutter\\lib\\desktop\\pages",
-    "\\flutter\\lib\\desktop\\widgets",
-    "\\flutter\\windows",
+    "\\res",
     "\\src",
     "\\src\\ui"
   ],
-  "SelectedNode": "\\src\\lang.rs",
   "PreviewInSolutionExplorer": false
 }

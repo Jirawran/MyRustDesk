@@ -132,7 +132,7 @@ function adjustBorder() {
         };
     } else {
         self.style.set {
-            border: "black solid 1px",
+            border: "black solid 0px",
         };
     }
     var el = $(button#maximize);

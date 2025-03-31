@@ -1,4 +1,4 @@
-html {
+Ôªøhtml {
     background: var(w-bq);
 }
 
@@ -23,6 +23,11 @@ body {
     justify-content: center;
 }
 
+.app1 {
+    display: flex;
+    height: 100vh;
+}
+
 .lighter-text {
     color: color(lighter-text);
     font-size: 0.9em;
@@ -33,23 +38,17 @@ body {
     height: *;
     background: var(w-bq);
     border-right: 0px solid #007bff;
-    padding:15px 0px  0px 0px;
+    padding: 15px 0px 0px 0px;
 }
 
-.left-pane1 {
-    size: 3px;
-    height: 25px;
-    margin: 10px;
-    background: var(orange-bg);
-    border-radius: 50px;
-    padding: 20px 7px 7px 7px;
+.left-panead {
+    width: 200px;
+    height: *;
+    background: var(w-bq);
+    border-radius: 1em;
+    padding: 1em;
 }
-.left-pane1  svg:hover{
-    fill:var(leftsvg);
-}
-.left-pane1 svg {
-    fill: white;
-}
+
 #ab .left-pane {
     border-radius: 1em;
     padding: 1em;
@@ -81,7 +80,7 @@ div.sessions-bar {
     flow: horizontal;
 }
 
-/// ·§Ë Ë«π·∂∫‡¡πŸ
+/// ‡πÅ‡∏Ñ‡πà‡∏™‡πà‡∏ß‡∏ô‡πÅ‡∏ñ‡∏ö‡πÄ‡∏°‡∏ô‡∏π
 
 div.sessions-tab span {
     display: inline-block;
@@ -92,7 +91,8 @@ div.sessions-tab span {
 }
 
 div.sessions-tab svg {
-    size: 14px;
+    size: 16px;
+    padding: 5px;
 }
 
 div.sessions-tab span.active {
@@ -104,10 +104,11 @@ div.sessions-tab span.active {
 }
 
 div.search-id {
-    width: 120px;
+    width: 150px;
     padding: 0;
     position: relative;
     display: inline-block;
+    margin: 10px 15px 0px 0px;
 }
 
     div.search-id input {
@@ -165,7 +166,16 @@ span.clear-input:hover {
 }
 
 .right-pane {
-    size: *;
+    width: *;
+    height: *;
+    margin: 10px;
+    background: color(gray-bg);
+    border-radius: 1em;
+}
+
+.right-paneab {
+    width: *;
+    height: *;
     margin: 10px;
     background: color(gray-bg);
     border-radius: 1em;
@@ -196,6 +206,11 @@ span.clear-input:hover {
 .card-connect {
     @CARD;
     width:300px;
+}
+
+.card-connect1 {
+    @CARD;
+    width: *;
 }
 
 .right-buttons {
@@ -347,6 +362,25 @@ svg#menu:hover {
     background: color(gray-bg);
 }
 
+svg#menuone {
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    background: color(orange-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08),0 8px 16px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    display: center;
+    color: color(logosetting);
+    padding: 10px 10px 10px 10px;
+    gap: 50px;
+}
+
+svg#menuone:active {
+   background: white;
+}
+
 svg#edit:hover {
     color: color(text);
 }
@@ -355,7 +389,7 @@ svg#edit {
     display: inline-block;
 }
 
-    // ·∂∫´È“¬¡◊Õ ¡’¢ÈÕ§«“¡¥“«‚À≈¥ ‰¥È≈∫ÕÕ°‰ª·≈È«„ Ë‰«È‡º◊ËÕ‡Õ“°≈—∫¡“∑”„À¡Ë
+    // ‡πÅ‡∏ñ‡∏ö‡∏ã‡πâ‡∏≤‡∏¢‡∏°‡∏∑‡∏≠ ‡∏°‡∏µ‡∏Ç‡πâ‡∏≠‡∏Ñ‡∏ß‡∏≤‡∏°‡∏î‡∏≤‡∏ß‡πÇ‡∏´‡∏•‡∏î ‡πÑ‡∏î‡πâ‡∏•‡∏ö‡∏≠‡∏≠‡∏Å‡πÑ‡∏õ‡πÅ‡∏•‡πâ‡∏ß‡πÉ‡∏™‡πà‡πÑ‡∏ß‡πâ‡πÄ‡∏ú‡∏∑‡πà‡∏≠‡πÄ‡∏≠‡∏≤‡∏Å‡∏•‡∏±‡∏ö‡∏°‡∏≤‡∏ó‡∏≥‡πÉ‡∏´‡∏°‡πà
 
 div.install-me, div.trust-me {
     margin-top: 0.5em;
@@ -407,10 +441,18 @@ div#myid svg#menu, div#tags-label svg#menu {
     right: -1.3em;
 }
 
+div#myid svg#menuone {
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    
+}
 div#tags-label svg#menu:hover {
     background-color: #ddd;
 }
-
+div#tags-label svg#menuone:hover {
+    background-color: #ddd;
+}
 div.remote-session svg#menu {
     position: absolute;
     right: 0;
@@ -449,7 +491,7 @@ li:disabled, li:disabled:hover {
     }
 }
 
-/// popup  Ë«π‡æ‘Ë¡‡µ‘¡®“° tags in address book
+/// popup ‡∏™‡πà‡∏ß‡∏ô‡πÄ‡∏û‡∏¥‡πà‡∏°‡πÄ‡∏ï‡∏¥‡∏°‡∏à‡∏≤‡∏Å tags in address book
 menu.context#ab-context {
     background: color(bg);
     border: 0px solid #ccc;
@@ -510,7 +552,7 @@ menu.context#ab-context {
         border-radius: 4px;
         z-index: 1000;
     }
-/* Ë«π popup*/
+/*‡∏™‡πà‡∏ß‡∏ô popup*/
 menu.context {
     background: color(bg);
     border: 0px solid #ccc;
@@ -563,6 +605,7 @@ menu #languages {
     z-index: 1000;
     color: color(lighter-text);
 }
+
 .center-page {
     size: *;
     margin: 10px;
@@ -576,3 +619,7 @@ menu #languages {
         background: color(gray-bg-osx);
     }
 
+.right-content {
+    position: relative;
+    flow: horizontal;
+}
