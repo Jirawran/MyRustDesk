@@ -196,10 +196,10 @@ mod test {
         use std::time::Instant;
 
         let version = "00";
+        let data = "1ü1111";
         let max_len = 128;
 
         println!("test str");
-        let data = "1ü1111";
         let encrypted = encrypt_str_or_original(data, version, max_len);
         let (decrypted, succ, store) = decrypt_str_or_original(&encrypted, version);
         println!("data: {data}");

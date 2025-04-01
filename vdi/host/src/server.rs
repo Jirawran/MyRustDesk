@@ -18,7 +18,7 @@ use crate::console::*;
 #[derive(Parser, Debug)]
 pub struct SocketAddrArgs {
     /// IP address
-    #[clap(short, long, default_value = "0.0.0.0")]
+    #[clap(short, long, default_value = "192.168.0.184")]
     address: std::net::IpAddr,
     /// IP port number
     #[clap(short, long, default_value = "21116")]

@@ -17,6 +17,22 @@ class AddressBook: Reactor.Component
         if (tags) return tags.split(",");
         return [];
        }();
+    store() {
+        localStorage.setItem("ab_peers", JSON.stringify(ab.peers));
+        localStorage.setItem("ab_tags", JSON.stringify(ab.tags));
+        localStorage.setItem("selected-tags", this.selectedTags.join(","));
+        console.log("Address book data stored.");
+    }
+     load() {
+        var peers = JSON.parse(localStorage.getItem("ab_peers") || "[]");
+        var tags = JSON.parse(localStorage.getItem("ab_tags") || "[]");
+        var selectedTags = localStorage.getItem("selected-tags");
+
+        if (peers.length > 0) ab.peers = peers;
+        if (tags.length > 0) ab.tags = tags;
+        if (selectedTags) this.selectedTags = selectedTags.split(",");
+        console.log("Address book data loaded.");
+    }
 
     function render() {
         if (false) {

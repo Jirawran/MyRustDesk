@@ -1584,12 +1584,13 @@ impl Connection {
             .map(|s| s.to_owned());
         // last_recv_time is a mutex variable shared with connection, can be updated lively.
         if let Some(session) = session {
-            if !self.lr.password.is_empty()
-                && (tfa && session.tfa
-                    || !tfa && self.validate_one_password(session.random_password.clone()))
+            if tfa && session.tfa {
+            log::info!("is recent session (TFA enabled)");
+            return true;
             {
-                log::info!("is recent session");
+                log::info!("is recent session (no password check)");
                 return true;
+            }
             }
         }
         false
