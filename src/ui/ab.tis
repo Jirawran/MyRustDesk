@@ -18,20 +18,29 @@ class AddressBook: Reactor.Component
         return [];
        }();
     store() {
-        localStorage.setItem("ab_peers", JSON.stringify(ab.peers));
-        localStorage.setItem("ab_tags", JSON.stringify(ab.tags));
-        localStorage.setItem("selected-tags", this.selectedTags.join(","));
-        console.log("Address book data stored.");
+       let data = {
+            peers: ab.peers,
+            tags: ab.tags,
+            selectedTags: this.selectedTags
+        };
+        fetch("/save-addressbook", {
+            method: "POST",
+            headers: { "Content-Type": "Addres_book/json" },
+            body: JSON.stringify(data)
+        }).then(() => console.log("Address book saved on server."));
     }
      load() {
-        var peers = JSON.parse(localStorage.getItem("ab_peers") || "[]");
-        var tags = JSON.parse(localStorage.getItem("ab_tags") || "[]");
-        var selectedTags = localStorage.getItem("selected-tags");
-
-        if (peers.length > 0) ab.peers = peers;
-        if (tags.length > 0) ab.tags = tags;
-        if (selectedTags) this.selectedTags = selectedTags.split(",");
-        console.log("Address book data loaded.");
+        fetch("/load-addressbook")
+            .then(res => res.json())
+            .then(data => {
+                ab.peers = data.peers || [];
+                ab.tags = data.tags || [];
+                this.selectedTags = data.selectedTags || [];
+                handler.set_local_option("selected-tags", this.selectedTags.join(","));
+                console.log("Address book data loaded from server.");
+                this.update();
+            })
+            .catch(err => console.error("Failed to load Address Book:", err));
     }
 
     function render() {

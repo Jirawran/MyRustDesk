@@ -1,11 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\flutter",
-    "\\flutter\\lib",
-    "\\res",
-    "\\src",
-    "\\src\\ui"
+    "\\.cargo",
+    "\\libs",
+    "\\libs\\hbb_common",
+    "\\libs\\hbb_common\\examples",
+    "\\libs\\hbb_common\\protos",
+    "\\libs\\portable",
+    "\\libs\\scrap",
+    "\\libs\\scrap\\src",
+    "\\libs\\scrap\\src\\common"
   ],
+  "SelectedNode": "\\Dockerfile",
   "PreviewInSolutionExplorer": false
 }
